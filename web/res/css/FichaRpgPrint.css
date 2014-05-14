@@ -22,3 +22,9 @@ input {
     display: none;
 }
 
+#cabecalho {
+    width: 1374px;
+    /*color: red;*/
+    height: 50px;
+}
+

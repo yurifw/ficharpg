@@ -4,6 +4,7 @@
     Author     : ywaki
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,10 +13,10 @@
         <%@taglib tagdir="/WEB-INF/tags/" prefix="storyteller"%>
         
         <script src="js/DesabilitaBotaoDireito.js"></script>
-        <script src="js/fichaRPG.js"></script>
-        
-        <link rel="stylesheet" href="css/FichaRpgScreen.css" media="all">
-        <link rel="stylesheet" href="css/FichaRpgPrint.css" media="print">
+        <script src="res/js/fichaRPG.js"></script>
+        <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="res/css/FichaRpgScreen.css" media="all">
+        <link rel="stylesheet" href="res/css/FichaRpgPrint.css" media="print">
 
 
 
@@ -23,96 +24,129 @@
 
     </head>
     <body>
-        <div id="imagemFicha" style="width: 1074px; height: 1434px; float: left; position: relative;">
-            <img src="imagens/ficha-vampiro/FichaMascara.jpg">
-        </div>
-        <div id="ficha">
-            <input class="Cabecalho" type="text" id="txtNome"  style="margin-top: 225px; margin-left: 140px; width: 228px">
-            <input class="Cabecalho" type="text" id="txtNatureza"  style="margin-top: 225px; margin-left: 130px; width:200px ">
-            <input class="Cabecalho" type="text" id="txtGeracao"  style="margin-top: 225px; margin-left: 105px; width: 185px">
-            <br>
-            <input class="Cabecalho"  type="text" id="txtJogador"  style="margin-top:3px;margin-left: 170px; width: 200px"/>
-            <input class="Cabecalho"  type="text" id="txtComportamento"  style="margin-top:0px;margin-left: 200px; width:130px"/>
-            <input class="Cabecalho" type="text" id="txtRefugio"  style="margin-top:0px;margin-left: 101px; width:187px"/>
-            <br>
-            <input class="Cabecalho" type="text" id="txtCronica"  style="margin-top:5px;margin-left: 170px; width: 200px"/>
-            <input class="Cabecalho" type="text" id="txtCla"  style="margin-top:0px;margin-left: 65px; width: 265px"/>
-            <input class="Cabecalho" type="text" id="txtConceito"  style="margin-top:0px;margin-left: 100px; width: 190px">
-            <br>
-            <storyteller:nivelStoryteller type="Atributo" id="nvlForca" marginLeft="225px" marginTop=" 82px"/>
-            <storyteller:nivelStoryteller type="Atributo" id="nvlCarisma" marginLeft="188px" marginTop=" 0px"/>
-            <storyteller:nivelStoryteller type="Atributo" id="nvlPercepcao" marginLeft="145px" marginTop=" 0px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Atributo" id="nvlDestreza" marginLeft="225px" marginTop=" 3px"/>
-            <storyteller:nivelStoryteller type="Atributo" id="nvlManipulacao" marginLeft="188px" marginTop=" 0px"/>
-            <storyteller:nivelStoryteller type="Atributo" id="nvlInteligencia" marginLeft="145px" marginTop=" 0px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Atributo" id="nvlVigor"  marginLeft="225px" marginTop=" 0px"/>
-            <storyteller:nivelStoryteller type="Atributo" id="nvlAparencia" marginLeft="188px" marginTop=" 0px"/>
-            <storyteller:nivelStoryteller type="Atributo" id="nvlRaciocinio" marginLeft="145px" marginTop=" 0px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlProntidao" marginLeft="235px" marginTop=" 80px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlEmpatiaAnimais" marginLeft="180px" marginTop=" 0px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlAcademicos" marginLeft="140px" marginTop=" 0px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlEsportes" marginLeft="235px" marginTop=" 3px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlOficios" marginLeft="180px" marginTop=" 0px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlComputador" marginLeft="140px" marginTop=" 0px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlBriga" marginLeft="235px" marginTop="3px" />
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlConducao" marginLeft="180px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlFinancas" marginLeft="140px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlEsquiva" marginLeft="235px" marginTop="3px" />
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlEtiqueta" marginLeft="180px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlInvestigacao" marginLeft="140px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlEmpatia" marginLeft="235px" marginTop="3px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlArmasFogo" marginLeft="180px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlDireito" marginLeft="140px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlExpressao" marginLeft="235px" marginTop="3px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlArmasBrancas" marginLeft="180px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlLinguistica" marginLeft="140px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlIntimidacao" marginLeft="235px" marginTop="3px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlPerformance" marginLeft="180px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlMedicina" marginLeft="140px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlLideranca" marginLeft="235px" marginTop="3px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlSeguranca" marginLeft="180px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlOcultismo" marginLeft="140px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlManha" marginLeft="235px" marginTop="3px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlFurtividade" marginLeft="180px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlPolitica" marginLeft="140px"/>
-            <br>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlLabia" marginLeft="235px" marginTop="3px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlSobrevivencia" marginLeft="180px"/>
-            <storyteller:nivelStoryteller type="Habilidade" id="nvlCiencia" marginLeft="140px"/>
-            <div class="Vantagens" style="margin-top: 80px; padding-left: 30px">
+        
+        <img src="res/imagens/ficha-vampiro/ficha_vampiro_cabecalho.png">
+        
+        <div id="ficha" class="ficha">
+            <div id="cabecalho">
+                <div style="float: left; padding-left: 64px;">
+                    <div style="float:left">Nome</div><input class="Cabecalho" type="text" id="txtNome" >
+                    <div style="clear: both"></div>
+                    <div style="float:left">Jogador</div><input class="Cabecalho"  type="text" id="txtJogador"/>
+                    <div style="clear: both"></div>
+                    <div style="float: left">Cabecalho</div><input class="Cabecalho" type="text" id="txtCronica" />
+                    <div style="clear: both"></div>
+                </div>
+                <div style="float: left; padding-left: 20px;">
+                    <div style="float: left">Natureza</div><input class="Cabecalho" type="text" id="txtNatureza">
+                    <div style="clear: both"></div>
+                    <div style="float: left">Comportamento</div><input class="Cabecalho"  type="text" id="txtComportamento"/>
+                    <div style="clear: both"></div>
+                    <div style="float: left">Clã</div><input class="Cabecalho" type="text" id="txtCla" />
+                    <div style="clear: both"></div>
+                </div>
+                <div style="float: left; padding-left: 0px;">
+                    <div style="float: left">Geração</div><input class="Cabecalho" type="text" id="txtGeracao" >
+                    <div style="clear: both"></div>
+                    <div style="float: left">Refúgio</div><input class="Cabecalho" type="text" id="txtRefugio"/>                        
+                    <div style="clear: both"></div>
+                    <div style="float: left">Conceito</div><input class="Cabecalho" type="text" id="txtConceito">
+                    <div style="clear: both"></div>
+                </div>
+            </div>
+            <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_atributos.png">
+            <div id="atributos">
+                <div id="fisicos" style="padding-left: 64px; width: 300px; float: left;">
+                    <storyteller:nivelStoryteller campo="Força" type="Atributo" id="nvlForca"/>
+                    <storyteller:nivelStoryteller campo="Destreza" type="Atributo" id="nvlDestreza" />
+                    <storyteller:nivelStoryteller campo="Vigor" type="Atributo" id="nvlVigor" />
+                </div>
+                <div id="sociais" style="padding-left: 26px; width: 300px; float: left;">
+                    <storyteller:nivelStoryteller campo="Carisma" type="Atributo" id="nvlCarisma" />
+                    <storyteller:nivelStoryteller campo="Manipulação" type="Atributo" id="nvlManipulacao" />
+                    <storyteller:nivelStoryteller campo="Aparência" type="Atributo" id="nvlAparencia" />
+                </div>
+                <div id = "mentais" style=" padding-left: 25px; width: 300px; float: left;">
+                    <storyteller:nivelStoryteller campo="Percepção" type="Atributo" id="nvlPercepcao" />
+                    <storyteller:nivelStoryteller campo="Inteligência" type="Atributo" id="nvlInteligencia" />
+                    <storyteller:nivelStoryteller campo="Raciocinio" type="Atributo" id="nvlRaciocinio" />
+                </div>
+            </div>
+            <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_habilidades.png">
+            <div id="habilidades" style="line-height: 25px;">
+                <div id="talentos" style="padding-left: 65px;  width: 300px;float: left ">
+                    <storyteller:nivelStoryteller campo="Prontidão" type="Habilidade" id="nvlProntidao" />
+                    <storyteller:nivelStoryteller campo="Esportes" type="Habilidade" id="nvlEsportes" />
+                    <storyteller:nivelStoryteller campo="Briga" type="Habilidade" id="nvlBriga" />
+                    <storyteller:nivelStoryteller campo="Esquiva" type="Habilidade" id="nvlEsquiva"/>
+                    <storyteller:nivelStoryteller campo="Empatia" type="Habilidade" id="nvlEmpatia" />
+                    <storyteller:nivelStoryteller campo="Expressão" type="Habilidade" id="nvlExpressao" />
+                    <storyteller:nivelStoryteller campo="Intimidação" type="Habilidade" id="nvlIntimidacao" />                
+                    <storyteller:nivelStoryteller campo="Liderança" type="Habilidade" id="nvlLideranca"/>
+                    <storyteller:nivelStoryteller campo="Manha" type="Habilidade" id="nvlManha"/>
+                    <storyteller:nivelStoryteller campo="Lábia" type="Habilidade" id="nvlLabia" />                
+                </div>
+                <div id="pericias" style="padding-left: 25px;width: 360px; float:left">
+                    <storyteller:nivelStoryteller campo="Empatia c/ Animais" type="Habilidade" id="nvlEmpatiaAnimais" />
+                    <storyteller:nivelStoryteller campo="Ofícios" type="Habilidade" id="nvlOficios" />
+                    <storyteller:nivelStoryteller campo="Condução" type="Habilidade" id="nvlConducao" />
+                    <storyteller:nivelStoryteller campo="Etiqueta" type="Habilidade" id="nvlEtiqueta" />
+                    <storyteller:nivelStoryteller campo="Armas de Fogo" type="Habilidade" id="nvlArmasFogo" />
+                    <storyteller:nivelStoryteller campo="Armas Brancas" type="Habilidade" id="nvlArmasBrancas" />
+                    <storyteller:nivelStoryteller campo="Performance" type="Habilidade" id="nvlPerformance" />
+                    <storyteller:nivelStoryteller campo="Segurança" type="Habilidade" id="nvlSeguranca"/>
+                    <storyteller:nivelStoryteller campo="Furtividade" type="Habilidade" id="nvlFurtividade" />
+                    <storyteller:nivelStoryteller campo="Sobrevivência" type="Habilidade" id="nvlSobrevivencia"/>
+                </div>
+                <div id="conhecimento" style="padding-left: 20px; width: 290px; float:left">
+                    <storyteller:nivelStoryteller campo="Acadêmicos" type="Habilidade" id="nvlAcademicos" />
+                    <storyteller:nivelStoryteller campo="Computador" type="Habilidade" id="nvlComputador" />
+                    <storyteller:nivelStoryteller campo="Finanças" type="Habilidade" id="nvlFinancas" />            
+                    <storyteller:nivelStoryteller campo="Investigação" type="Habilidade" id="nvlInvestigacao"/>            
+                    <storyteller:nivelStoryteller campo="Direito" type="Habilidade" id="nvlDireito" />
+                    <storyteller:nivelStoryteller campo="Linguística" type="Habilidade" id="nvlLinguistica" />
+                    <storyteller:nivelStoryteller campo="Medicina" type="Habilidade" id="nvlMedicina" />
+                    <storyteller:nivelStoryteller campo="Ocultismo" type="Habilidade" id="nvlOcultismo" />
+                    <storyteller:nivelStoryteller campo="Política" type="Habilidade" id="nvlPolitica" />
+                    <storyteller:nivelStoryteller campo="Ciência" type="Habilidade" id="nvlCiencia" />
+                </div>
+            </div>
+            <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_vantagens.png">
+            <div class="Vantagens" style="padding-left: 30px; height: 130px; ">
                 <div class="Antecedentes" style="float: left;  width: 340px">
                     <storyteller:skilltable qtdLinhas="4" nome="Antecedente" />
                 </div>
-                <div class="Discplinas" style="float: left; width: 340px">
+                <div class="Discplinas" style="float: left; width: 340px;">
                     <storyteller:skilltable qtdLinhas="4" nome="Disciplina" />
                 </div>
-                <div class="Virtudes">
-                    <storyteller:nivelStoryteller id="nvlConsciencia" type="Atributo" marginLeft="150px" marginTop="6px"/>
-                    <storyteller:nivelStoryteller id="nvlAutocontrole" type="Atributo" marginLeft="150px" marginTop="55px"/>
-                    <storyteller:nivelStoryteller id="nvlCoragem" type="Atributo" marginLeft="150px" marginTop="53px"/>
+                <div class="Virtudes" style="float:left">
+                    <storyteller:nivelStoryteller campo="Consciencia<br>Convicção" id="nvlConsciencia" type="Atributo" />
+                    <storyteller:nivelStoryteller campo="Autocontrole<br>Instintos" id="nvlAutocontrole" type="Atributo" />
+                    <storyteller:nivelStoryteller campo="Coragem" id="nvlCoragem" type="Atributo" />
                 </div>
             </div>
-            <div class="parteEmbaixoDaVantagens" style="margin-top: 60px; padding-left: 30px">
-                <div class="qualidadesDefeitos" style="float: left; width: 340px">
+            <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador.png">
+           
+            <div class="parteEmbaixoDaVantagens" style="padding-left: 30px">
+                <div class="qualidadesDefeitos" style="float: left; width: 340px;">
+                    <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_qualidades.png">
                     <storyteller:qualidadetable nome="QualidadesDefeitos" qtdLinhas="7" />
                 </div>
-                <div class="humanidade">
-                    <input type="text" class="Cabecalho" id="txtTrilha" style="margin-left: 18px; width: 290px">
-                    <br>
+                <div class="humanidade" style="float:left; width: 340px">
+                    <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_humanidade.png">
+                    <input type="text" id="txtTrilha" style="margin-left: 18px; width: 290px;">
                     <storyteller:nivelhumanidade id="nvlHumanidade" marginLeft="20px" marginTop="10px"/>
-                    <br>
-                    <storyteller:nivelhumanidade id="nvlForcaVontade" marginLeft="20px" marginTop="30px"/>
+                    <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_forca_vontade.png">
+                    <storyteller:nivelhumanidade id="nvlForcaVontade" marginLeft="20px"/>
+                    <img src="res/imagens/ficha-vampiro/quadrados.png" style="margin-left: 20px">
+                    <img src="res/imagens/ficha-vampiro/ficha_vampiro_sangue.png">
+                    <img src="res/imagens/ficha-vampiro/quadrados.png" style="margin-left: 20px">
+                    <img src="res/imagens/ficha-vampiro/quadrados.png" style="margin-left: 20px">
+                    
+                </div>
+                <div class="vitalidade" style="float:left;">
+                    <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_vitalidade.png">
+                    
                 </div>
             </div>
         </div>
@@ -120,7 +154,7 @@
             <a href="#" onclick="window.print()">Imprimir Ficha</a>
             <br>
             <a href="sobre.jsp" target="_blank">Sobre</a>
-            <a 
+            
         </div>
 
 

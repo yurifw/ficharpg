@@ -1,0 +1,34 @@
+/* 
+    Document   : FichaRPG
+    Created on : Nov 4, 2013, 10:25:09 AM
+    Author     : ywaki
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.ficha {
+    /*font-family: 'vampire_standard';*/
+    font-family: "vampire";
+    width: 1074px;
+    /*height: 1234px;*/
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    position: absolute;
+    font-size: 20px;
+    font-family: 'Goudy Bookletter 1911', serif;
+}
+#ficha{   
+}
+.Cabecalho{
+    float:right;
+}
+
+
+.Atributo {
+    
+}
+
+
+
+

@@ -17,7 +17,7 @@
 <%!
     public String geraTag(String id, String marginLeft, String marginTop) {
         String tag = "";
-        String src="imagens/ficha-vampiro/nvl00.png";
+        String src="res/imagens/ficha-vampiro/nvl00.png";
         if(marginTop==null) marginTop="0px";
         if(marginLeft==null) marginLeft="0px";
         

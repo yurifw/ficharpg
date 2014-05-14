@@ -9,7 +9,7 @@
 <%@taglib tagdir="/WEB-INF/tags/" prefix="storyteller"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
-<link rel="stylesheet" type="text/css" href="css/skilltable.css" media="all">
+<link rel="stylesheet" type="text/css" href="res/css/skilltable.css" media="all">
 
 <table class="tabelaSkill">
     <thead>
@@ -22,7 +22,7 @@
         <c:forEach var="i" begin="0" end="${qtdLinhas}">
             <tr>
                 <td class="editavel"></td>
-                <td class="naoeditavel"><storyteller:nivelStoryteller type="Habilidade" id="nvllLabia${i}${nome}" marginLeft="0px" marginTop="0px" /></td>
+                <td class="naoeditavel"><storyteller:nivelStoryteller campo="" type="Habilidade" id="nvllLabia${i}${nome}"/></td>
             </tr>
         </c:forEach>
     </tbody>

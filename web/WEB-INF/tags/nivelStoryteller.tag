@@ -9,31 +9,30 @@
 
 
 <%-- The list of normal or fragment attributes can be specified here: --%>
+<%@attribute name="campo" required="true"%>
 <%@attribute name="id" required="true"%>
 <%@attribute name="type" required="true"%>
-<%@attribute name="marginLeft" required="false" %>
-<%@attribute name="marginTop" required="false"%>
 
 <%!
-    public String geraTag(String id, String type, String marginLeft, String marginTop) {
+    public String geraTag(String campo, String id, String type) {
         String tag = "";
         String src="";
-        if(type.equals("Habilidade")) src="imagens/ficha-vampiro/nvl00.gif";
-        if(type.equals("Atributo")) src="imagens/ficha-vampiro/nvl01.gif";
-        if(marginTop==null) marginTop="0px";
-        if(marginLeft==null) marginLeft="0px";
-        
-        tag="<img class=\"@type\" src=\"@src\" id=\"@id\" alt=\"@alt\" "
-                + "onmousedown=\"alteraImagem('@id',event);\" "
-                + "style=\"margin-left: @marginLeft; margin-top: @marginTop\">";
+        if(type.equals("Habilidade")) src="res/imagens/ficha-vampiro/nvl00.gif";
+        if(type.equals("Atributo")) src="res/imagens/ficha-vampiro/nvl01.gif";
+        tag="<div style=\"float:left\">";
+        tag+=campo;
+        tag+="</div>";
+        tag+="<div style=\"float:right\">";
+        tag+="<img class=\"@type\" src=\"@src\" id=\"@id\" alt=\"@alt\" "
+                + "onmousedown=\"alteraImagem('@id',event);\" >";
         tag=tag.replace("@type", type);
         tag=tag.replace("@src", src);
         tag=tag.replaceAll("@id", id);
         tag=tag.replaceAll("@alt", id);
-        tag=tag.replace("@marginLeft", marginLeft);
-        tag=tag.replace("@marginTop", marginTop);
-        
+        tag+="</div>";
+        tag+="<div style=\"clear:both\"></div>";
         return tag;
+//        return "<img class=\"Atributo\" src=\"res/imagens/ficha-vampiro/nvl01.gif\" id=\"nvlForca\" alt=\"nvlForca\" onmousedown=\"alteraImagem('nvlForca',event);\" style=\"margin-left: 225px; margin-top:  82px\">";
     }
 %>
-<%= geraTag(id, type, marginLeft, marginTop)%>
+<%= geraTag(campo,id, type)%>
