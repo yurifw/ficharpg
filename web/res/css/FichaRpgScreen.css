@@ -17,6 +17,13 @@
 }
 #ficha{   
 }
+
+.btnAjuda {
+    background-color: #F00;
+    border-radius: 0px;
+    border-style: none;
+    margin: 2px 2px 2px 2px;
+}
 .Cabecalho{
     float:right;
 }

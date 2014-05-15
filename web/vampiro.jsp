@@ -17,14 +17,7 @@
         <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="res/css/FichaRpgScreen.css" media="all">
         <link rel="stylesheet" href="res/css/FichaRpgPrint.css" media="print">
-<!--        <script src="code.jquery.com/jquery-2.1.1.min.js"> </script>-->
-        <!--joyride plugin-->
-        <link rel=" stylesheet" type="text/css" href="res/joyride-master/joyride-2.1.css">
-        <script type="text/javascript" src="res/joyride-master/jquery-1.10.1.js"></script>
-        <script type="text/javascript" src="res/joyride-master/jquery.cookie.js"></script>
-        <script type="text/javascript" src="res/joyride-master/modernizr.mq.js"></script>
-        <script type="text/javascript" src="res/joyride-master/jquery.joyride-2.1.js"></script>
-
+        <link rel="stylesheet" href="res/joyride/joyride-2.1.css">
 
 
         <title>Ficha Vampiro</title>
@@ -52,7 +45,7 @@
                     <div style="float: left">Clã</div><input class="Cabecalho" type="text" id="txtCla" />
                     <div style="clear: both"></div>
                 </div>
-                <div style="float: left; padding-left: 0px;">
+                <div style="float: left; padding-left: 20px;">
                     <div style="float: left">Geração</div><input class="Cabecalho" type="text" id="txtGeracao" >
                     <div style="clear: both"></div>
                     <div style="float: left">Refúgio</div><input class="Cabecalho" type="text" id="txtRefugio"/>                        
@@ -73,7 +66,7 @@
                     <storyteller:nivelStoryteller campo="Manipulação" type="Atributo" id="nvlManipulacao" />
                     <storyteller:nivelStoryteller campo="Aparência" type="Atributo" id="nvlAparencia" />
                 </div>
-                <div id = "mentais" style=" padding-left: 25px; width: 300px; float: left;">
+                <div id = "mentais" style=" padding-left: 25px; width: 280px; float: left;">
                     <storyteller:nivelStoryteller campo="Percepção" type="Atributo" id="nvlPercepcao" />
                     <storyteller:nivelStoryteller campo="Inteligência" type="Atributo" id="nvlInteligencia" />
                     <storyteller:nivelStoryteller campo="Raciocinio" type="Atributo" id="nvlRaciocinio" />
@@ -126,9 +119,9 @@
                 <div class="Discplinas" style="float: left; width: 340px;">
                     <storyteller:skilltable qtdLinhas="4" nome="Disciplina" />
                 </div>
-                <div class="Virtudes" style="float:left">
-                    <storyteller:nivelStoryteller campo="Consciencia<br>Convicção" id="nvlConsciencia" type="Atributo" />
-                    <storyteller:nivelStoryteller campo="Autocontrole<br>Instintos" id="nvlAutocontrole" type="Atributo" />
+                <div class="Virtudes" style="float:left; padding-left: 10px ; width: 280px">
+                    <storyteller:nivelStoryteller campo="Consciencia<br>Convicção" id="nvlConsciencia" type="Atributo" /> <br>
+                    <storyteller:nivelStoryteller campo="Autocontrole<br>Instintos" id="nvlAutocontrole" type="Atributo" /><br>
                     <storyteller:nivelStoryteller campo="Coragem" id="nvlCoragem" type="Atributo" />
                 </div>
             </div>
@@ -158,22 +151,41 @@
             </div>
         </div>
         <div id="menudiv" style="float: right">
-            <a href="#" onclick="window.print()">Imprimir Ficha</a>
+            <input type="button" id="btnRide" value="Ajuda" class="btnAjuda" style="position: fixed">
             <br>
-            <a href="sobre.jsp" target="_blank">Sobre</a>
+            <br>
+            <a id="lnkImprimir" href="#" onclick="window.print()">Imprimir Ficha</a>
 
         </div>
 
-        <ol id="joyRideTipContent" >
-            <li data-id="fisicos"> Para aumentar um ponto, clique com o botão esquerdo,
-                 para diminuir clique com o botão direito.</li>        
+
+        <ol id="joyRideTipContent" style="display: none">
+            <li data-id="nvlForca" data-button="Próximo" data-options="tipLocation:right">
+                Para aumentar um ponto, clique com o botão esquerdo,
+                para diminuir clique com o botão direito.<br><br></li>
+            <li data-class="editavel" data-button="Próximo">
+                De um clique duplo para escrever neste campo<br><br></li>
+            <li data-id="lnkImprimir" data-button="Fim :-)" data-options="tipLocation:left">
+                Você pode imprimir a ficha. Ao imprimir, você também pode selecionar Imprimir para Arquivo e salvar em pdf.<br><br></li>
         </ol>
+
+        <script type="text/javascript" src="res/joyride/jquery-1.10.1.js"></script>
+        <script type="text/javascript" src="res/joyride/jquery.cookie.js"></script>
+        <script type="text/javascript" src="res/joyride/modernizr.mq.js"></script>
+        <script type="text/javascript" src="res/joyride/jquery.joyride-2.1.js"></script>
         <script>
-        $(window).load(function() {
-          $("#joyRideTipContent").joyride({
-            autoStart : true
-          });
-        });
+                $("#btnRide").click(function() {
+                    $('#joyRideTipContent').joyride({
+                        autoStart: true,
+                        postStepCallback: function(index, tip) {
+                            if (index == 2) {
+                                $(this).joyride('set_li', false, 1);
+                            }
+                        },
+                        modal: false
+                    });
+                });
+
         </script>
     </body>
 </html>
