@@ -11,12 +11,19 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@taglib tagdir="/WEB-INF/tags/" prefix="storyteller"%>
-        
+
         <script src="js/DesabilitaBotaoDireito.js"></script>
         <script src="res/js/fichaRPG.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="res/css/FichaRpgScreen.css" media="all">
         <link rel="stylesheet" href="res/css/FichaRpgPrint.css" media="print">
+<!--        <script src="code.jquery.com/jquery-2.1.1.min.js"> </script>-->
+        <!--joyride plugin-->
+        <link rel=" stylesheet" type="text/css" href="res/joyride-master/joyride-2.1.css">
+        <script type="text/javascript" src="res/joyride-master/jquery-1.10.1.js"></script>
+        <script type="text/javascript" src="res/joyride-master/jquery.cookie.js"></script>
+        <script type="text/javascript" src="res/joyride-master/modernizr.mq.js"></script>
+        <script type="text/javascript" src="res/joyride-master/jquery.joyride-2.1.js"></script>
 
 
 
@@ -24,9 +31,9 @@
 
     </head>
     <body>
-        
+
         <img src="res/imagens/ficha-vampiro/ficha_vampiro_cabecalho.png">
-        
+
         <div id="ficha" class="ficha">
             <div id="cabecalho">
                 <div style="float: left; padding-left: 64px;">
@@ -86,7 +93,7 @@
                     <storyteller:nivelStoryteller campo="Manha" type="Habilidade" id="nvlManha"/>
                     <storyteller:nivelStoryteller campo="Lábia" type="Habilidade" id="nvlLabia" />                
                 </div>
-                <div id="pericias" style="padding-left: 25px;width: 360px; float:left">
+                <div id="pericias" style="padding-left: 25px;width: 340px; float:left">
                     <storyteller:nivelStoryteller campo="Empatia c/ Animais" type="Habilidade" id="nvlEmpatiaAnimais" />
                     <storyteller:nivelStoryteller campo="Ofícios" type="Habilidade" id="nvlOficios" />
                     <storyteller:nivelStoryteller campo="Condução" type="Habilidade" id="nvlConducao" />
@@ -98,7 +105,7 @@
                     <storyteller:nivelStoryteller campo="Furtividade" type="Habilidade" id="nvlFurtividade" />
                     <storyteller:nivelStoryteller campo="Sobrevivência" type="Habilidade" id="nvlSobrevivencia"/>
                 </div>
-                <div id="conhecimento" style="padding-left: 20px; width: 290px; float:left">
+                <div id="conhecimento" style="padding-left: 20px; width: 250px; float:left">
                     <storyteller:nivelStoryteller campo="Acadêmicos" type="Habilidade" id="nvlAcademicos" />
                     <storyteller:nivelStoryteller campo="Computador" type="Habilidade" id="nvlComputador" />
                     <storyteller:nivelStoryteller campo="Finanças" type="Habilidade" id="nvlFinancas" />            
@@ -126,7 +133,7 @@
                 </div>
             </div>
             <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador.png">
-           
+
             <div class="parteEmbaixoDaVantagens" style="padding-left: 30px">
                 <div class="qualidadesDefeitos" style="float: left; width: 340px;">
                     <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_qualidades.png">
@@ -141,12 +148,12 @@
                     <img src="res/imagens/ficha-vampiro/quadrados.png" style="margin-left: 20px">
                     <img src="res/imagens/ficha-vampiro/ficha_vampiro_sangue.png">
                     <img src="res/imagens/ficha-vampiro/quadrados.png" style="margin-left: 20px">
-                    <img src="res/imagens/ficha-vampiro/quadrados.png" style="margin-left: 20px">
-                    
+                    <img id="testeId" src="res/imagens/ficha-vampiro/quadrados.png" style="margin-left: 20px">
+
                 </div>
                 <div class="vitalidade" style="float:left;">
                     <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_vitalidade.png">
-                    
+
                 </div>
             </div>
         </div>
@@ -154,9 +161,19 @@
             <a href="#" onclick="window.print()">Imprimir Ficha</a>
             <br>
             <a href="sobre.jsp" target="_blank">Sobre</a>
-            
+
         </div>
 
-
+        <ol id="joyRideTipContent" >
+            <li data-id="fisicos"> Para aumentar um ponto, clique com o botão esquerdo,
+                 para diminuir clique com o botão direito.</li>        
+        </ol>
+        <script>
+        $(window).load(function() {
+          $("#joyRideTipContent").joyride({
+            autoStart : true
+          });
+        });
+        </script>
     </body>
 </html>
