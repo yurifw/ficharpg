@@ -12,7 +12,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <%@taglib tagdir="/WEB-INF/tags/" prefix="storyteller"%>
 
-        <script src="js/DesabilitaBotaoDireito.js"></script>
+        <script src="res/js/DesabilitaBotaoDireito.js"></script>
         <script src="res/js/fichaRPG.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="res/css/FichaRpgScreen.css" media="all">
@@ -34,7 +34,7 @@
                     <div style="clear: both"></div>
                     <div style="float:left">Jogador</div><input class="Cabecalho"  type="text" id="txtJogador"/>
                     <div style="clear: both"></div>
-                    <div style="float: left">Cabecalho</div><input class="Cabecalho" type="text" id="txtCronica" />
+                    <div style="float: left">Crônica</div><input class="Cabecalho" type="text" id="txtCronica" />
                     <div style="clear: both"></div>
                 </div>
                 <div style="float: left; padding-left: 20px;">
@@ -164,7 +164,7 @@
                 Para aumentar um ponto, clique com o botão esquerdo,
                 para diminuir clique com o botão direito.<br><br></li>
             <li data-class="editavel" data-button="Próximo">
-                De um clique duplo para escrever neste campo<br><br></li>
+                Dê um clique duplo para escrever neste campo<br><br></li>
             <li data-id="lnkImprimir" data-button="Fim :-)" data-options="tipLocation:left">
                 Você pode imprimir a ficha. Ao imprimir, você também pode selecionar Imprimir para Arquivo e salvar em pdf.<br><br></li>
         </ol>
