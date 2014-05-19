@@ -1,0 +1,45 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 17/05/2014, 18:56:32
+    Author     : yurifw
+*/
+
+body{
+    background-color: #000;
+}
+
+.botao {
+    background-color: #fff;
+    color: #858585;
+    font-size: larger;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px;
+    display: inline-block;
+    margin:6px;
+}
+
+.botao:hover{
+    background-color: #444;
+    /*background-color: #396A92;*/
+    color: #fff;
+}
+
+.menu {
+    /*position: fixed;*/
+    float: left
+}
+
+.corpo {
+    background-color: #fff;
+    width: 900px;
+    float: left;
+    padding: 10px
+}
+h1{
+    background-color: #444;
+}
