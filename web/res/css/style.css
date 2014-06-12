@@ -27,6 +27,7 @@ body{
     background-color: #444;
     /*background-color: #396A92;*/
     color: #fff;
+    cursor: move;
 }
 
 .menu {
@@ -38,8 +39,15 @@ body{
     background-color: #fff;
     width: 900px;
     float: left;
-    padding: 10px
+    padding: 10px;
+    
 }
-h1{
-    background-color: #444;
+.title{
+    margin: 10px;
+    text-align: center;
+    width: min-content;
+    color: #000;
+    background: #fff;
+    font-size: 40px;
 }
+

@@ -17,6 +17,7 @@
         <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="res/css/FichaRpgScreen.css" media="all">
         <link rel="stylesheet" href="res/css/FichaRpgPrint.css" media="print">
+        
         <link rel="stylesheet" href="res/joyride/joyride-2.1.css">
 
 
@@ -86,7 +87,7 @@
                     <storyteller:nivelStoryteller campo="Manha" type="Habilidade" id="nvlManha"/>
                     <storyteller:nivelStoryteller campo="Lábia" type="Habilidade" id="nvlLabia" />                
                 </div>
-                <div id="pericias" style="padding-left: 25px;width: 340px; float:left">
+                <div id="pericias" style="padding-left: 25px;width: 350px; float:left">
                     <storyteller:nivelStoryteller campo="Empatia c/ Animais" type="Habilidade" id="nvlEmpatiaAnimais" />
                     <storyteller:nivelStoryteller campo="Ofícios" type="Habilidade" id="nvlOficios" />
                     <storyteller:nivelStoryteller campo="Condução" type="Habilidade" id="nvlConducao" />
@@ -98,7 +99,7 @@
                     <storyteller:nivelStoryteller campo="Furtividade" type="Habilidade" id="nvlFurtividade" />
                     <storyteller:nivelStoryteller campo="Sobrevivência" type="Habilidade" id="nvlSobrevivencia"/>
                 </div>
-                <div id="conhecimento" style="padding-left: 20px; width: 250px; float:left">
+                <div id="conhecimento" style="padding-left: 20px; width: 280px; float:left">
                     <storyteller:nivelStoryteller campo="Acadêmicos" type="Habilidade" id="nvlAcademicos" />
                     <storyteller:nivelStoryteller campo="Computador" type="Habilidade" id="nvlComputador" />
                     <storyteller:nivelStoryteller campo="Finanças" type="Habilidade" id="nvlFinancas" />            
@@ -151,10 +152,10 @@
             </div>
         </div>
         <div id="menudiv" style="float: right">
-            <input type="button" id="btnRide" value="Ajuda" class="btnAjuda" style="position: fixed">
-            <br>
-            <br>
-            <a id="lnkImprimir" href="#" onclick="window.print()">Imprimir Ficha</a>
+
+            <a type="button" id="btnRide" class="botao">Ajuda</a><br>
+
+            <a id="lnkImprimir" href="#" onclick="window.print()" class="botao">Imprimir Ficha</a>
 
         </div>
 
