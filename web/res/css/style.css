@@ -8,46 +8,21 @@ and open the template in the editor.
     Author     : yurifw
 */
 
-body{
-    background-color: #000;
-}
-
 .botao {
-    background-color: #fff;
-    color: #858585;
+    background-color: #787878;
+    color: #ffffff;
     font-size: larger;
     text-decoration: none;
     text-transform: uppercase;
     padding: 10px;
     display: inline-block;
     margin:6px;
+
 }
 
 .botao:hover{
-    background-color: #444;
-    /*background-color: #396A92;*/
+    background-color: #000;
     color: #fff;
-    cursor: move;
-}
-
-.menu {
-    /*position: fixed;*/
-    float: left
-}
-
-.corpo {
-    background-color: #fff;
-    width: 900px;
-    float: left;
-    padding: 10px;
-    
-}
-.title{
-    margin: 10px;
-    text-align: center;
-    width: min-content;
-    color: #000;
-    background: #fff;
-    font-size: 40px;
+    cursor: pointer;
 }
 
