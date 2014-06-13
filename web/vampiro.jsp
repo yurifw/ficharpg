@@ -15,6 +15,7 @@
         <script src="res/js/DesabilitaBotaoDireito.js"></script>
         <script src="res/js/fichaRPG.js"></script>
         <link href='http://fonts.googleapis.com/css?family=Goudy+Bookletter+1911' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="res/css/style.css" media="all">
         <link rel="stylesheet" href="res/css/FichaRpgScreen.css" media="all">
         <link rel="stylesheet" href="res/css/FichaRpgPrint.css" media="print">
         
@@ -31,28 +32,19 @@
         <div id="ficha" class="ficha">
             <div id="cabecalho">
                 <div style="float: left; padding-left: 64px;">
-                    <div style="float:left">Nome</div><input class="Cabecalho" type="text" id="txtNome" >
-                    <div style="clear: both"></div>
-                    <div style="float:left">Jogador</div><input class="Cabecalho"  type="text" id="txtJogador"/>
-                    <div style="clear: both"></div>
-                    <div style="float: left">Crônica</div><input class="Cabecalho" type="text" id="txtCronica" />
-                    <div style="clear: both"></div>
+                    <div class="linha">Nome</div><input class="Cabecalho" type="text" id="txtNome" >
+                    <div class="linha">Jogador</div><input class="Cabecalho"  type="text" id="txtJogador"/>
+                    <div class="linha">Crônica</div><input class="Cabecalho" type="text" id="txtCronica" />
                 </div>
                 <div style="float: left; padding-left: 20px;">
-                    <div style="float: left">Natureza</div><input class="Cabecalho" type="text" id="txtNatureza">
-                    <div style="clear: both"></div>
-                    <div style="float: left">Comportamento</div><input class="Cabecalho"  type="text" id="txtComportamento"/>
-                    <div style="clear: both"></div>
-                    <div style="float: left">Clã</div><input class="Cabecalho" type="text" id="txtCla" />
-                    <div style="clear: both"></div>
+                    <div class="linha">Natureza</div><input class="Cabecalho" type="text" id="txtNatureza">
+                    <div class="linha">Comportamento</div><input class="Cabecalho"  type="text" id="txtComportamento"/>
+                    <div class="linha">Clã</div><input class="Cabecalho" type="text" id="txtCla" />
                 </div>
                 <div style="float: left; padding-left: 20px;">
-                    <div style="float: left">Geração</div><input class="Cabecalho" type="text" id="txtGeracao" >
-                    <div style="clear: both"></div>
-                    <div style="float: left">Refúgio</div><input class="Cabecalho" type="text" id="txtRefugio"/>                        
-                    <div style="clear: both"></div>
-                    <div style="float: left">Conceito</div><input class="Cabecalho" type="text" id="txtConceito">
-                    <div style="clear: both"></div>
+                    <div class="linha">Geração</div><input class="Cabecalho" type="text" id="txtGeracao" >
+                    <div class="linha">Refúgio</div><input class="Cabecalho" type="text" id="txtRefugio"/>                        
+                    <div class="linha">Conceito</div><input class="Cabecalho" type="text" id="txtConceito">
                 </div>
             </div>
             <img src="res/imagens/ficha-vampiro/ficha_vampiro_separador_atributos.png">

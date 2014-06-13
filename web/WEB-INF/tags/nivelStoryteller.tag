@@ -19,7 +19,7 @@
         String src="";
         if(type.equals("Habilidade")) src="res/imagens/ficha-vampiro/nvl00.gif";
         if(type.equals("Atributo")) src="res/imagens/ficha-vampiro/nvl01.gif";
-        tag="<div style=\"float:left\">";
+        tag="<div class=\"linha\">";
         tag+=campo;
         tag+="</div>";
         tag+="<div style=\"float:right\">";
@@ -30,7 +30,6 @@
         tag=tag.replaceAll("@id", id);
         tag=tag.replaceAll("@alt", id);
         tag+="</div>";
-        tag+="<div style=\"clear:both\"></div>";
         return tag;
 //        return "<img class=\"Atributo\" src=\"res/imagens/ficha-vampiro/nvl01.gif\" id=\"nvlForca\" alt=\"nvlForca\" onmousedown=\"alteraImagem('nvlForca',event);\" style=\"margin-left: 225px; margin-top:  82px\">";
     }

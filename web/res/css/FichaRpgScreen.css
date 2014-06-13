@@ -18,21 +18,9 @@
 #ficha{   
 }
 
-.botao {
-    background-color: #858585;
-    color: #fff;
-    font-size: larger;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 10px;
-    display: inline-block;
-    margin:6px;
-}
-
-.botao:hover{
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
+.linha{
+    float: left;
+    clear: both;
 }
 
 

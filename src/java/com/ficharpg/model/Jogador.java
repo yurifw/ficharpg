@@ -15,7 +15,7 @@ import javax.persistence.Id;
  * @author yurifw
  */
 @Entity
-public class Usuario {
+public class Jogador {
     @Id @GeneratedValue
     private int id;
     private String login;

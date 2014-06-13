@@ -6,7 +6,7 @@
 
 package com.ficharpg.dao;
 
-import com.ficharpg.model.Usuario;
+import com.ficharpg.model.Jogador;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -14,14 +14,14 @@ import org.hibernate.Transaction;
  *
  * @author yurifw
  */
-public class UsuarioDAO {
+public class JogadorDAO {
     private final Session session;
     
-    public UsuarioDAO() {
+    public JogadorDAO() {
         session = CriadorDeSession.getSession();
     }
     
-    public void salva(Usuario u){
+    public void salva(Jogador u){
         Transaction tx = session.beginTransaction();
         session.save(u);
         tx.commit();
