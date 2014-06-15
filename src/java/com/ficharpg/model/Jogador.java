@@ -23,6 +23,15 @@ public class Jogador {
     private String email;
     private String senha;
 
+    public Jogador(String login, String nome, String email, String senha) {
+        setLogin(login);
+        setNome(nome);
+        setEmail(email);
+        setSenha(senha);
+    }
+    
+    
+
     public int getId() {
         return id;
     }
@@ -36,6 +45,7 @@ public class Jogador {
     }
 
     public void setLogin(String login) {
+        if (login.trim().isEmpty()) throw new IllegalArgumentException("O Login é obrigatório");
         this.login = login;
     }
 
@@ -44,6 +54,7 @@ public class Jogador {
     }
 
     public void setNome(String nome) {
+        if (nome.trim().isEmpty()) throw new IllegalArgumentException("O Nome é obrigatório");
         this.nome = nome;
     }
     
@@ -52,6 +63,7 @@ public class Jogador {
     }
 
     public void setEmail(String email) {
+        if (email.trim().isEmpty()) throw new IllegalArgumentException("O Email é obrigatório");
         this.email = email;
     }
 
@@ -60,14 +72,14 @@ public class Jogador {
     }
 
     public void setSenha(String senha) {
+        if (senha.isEmpty()) throw new IllegalArgumentException("A Senha é obrigatória");
+        if (senha.length()<6) throw new IllegalArgumentException("A Senha deve conter pelo menos 6 caracteres");
         this.senha = senha;
     }
 
     @Override
     public String toString() {
-        return  "Usuario:\n Nome: "+getNome()+"Email: "+getEmail()+"login: "+getLogin();
-        
-                
+        return  "Nome: "+getNome()+" Email: "+getEmail()+" login: "+getLogin();
     }
     
     

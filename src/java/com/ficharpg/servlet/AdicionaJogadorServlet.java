@@ -23,15 +23,22 @@ public class AdicionaJogadorServlet extends HttpServlet {
     
     @Override
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType ("text/html;charset=utf-8");
         PrintWriter out = response.getWriter();
-        Jogador u = new Jogador();
-        u.setEmail(request.getParameter("email"));
-        u.setLogin(request.getParameter("login"));
-        u.setSenha(request.getParameter("senha"));
-        out.println(u.toString());
-        JogadorDAO dao = new JogadorDAO();
-        dao.salva(u);
-        out.println("Usuario cadastrado com sucesso");
+        String nome = request.getParameter("nome");
+        String email = request.getParameter("email");
+        String login = request.getParameter("login");
+        String senha = request.getParameter("senha");
+        
+        try{
+            Jogador j = new Jogador(login, nome, email, senha);
+            JogadorDAO dao = new JogadorDAO();
+            dao.salva(j);
+            out.println("Usuario cadastrado com sucesso");
+        } catch(IllegalArgumentException iae) {
+            out.println(iae.getMessage());
+        }
+        
     }
     
 }
