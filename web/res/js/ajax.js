@@ -37,44 +37,12 @@ function sendForm(formId, requestAddress, returnId) {
     var result = document.getElementById(returnId);
     var requisicao = getRequest();
 
+    result.innerHTML = "Carregando...";
+    
     requisicao.open("POST", requestAddress + link);
-    requisicao.send();
+    requisicao.send();     
     requisicao.onreadystatechange = function() {
         result.innerHTML = requisicao.responseText;
     };
 
 }
-
-// exemplo
-//function cadastraCartaCorretiva(){
-//	var numeroNota = document.getElementById('txtNumeroNota').value;
-//	var razaoSocial =document.getElementById('txtRazaoSocial').value;
-//	var uf = document.getElementById('txtTomadorUF').value;
-//	var cidade = document.getElementById('txtInsMunicipioEmpresa').value;
-//	var endereco= document.getElementById('txtEndereco').value;
-//	var email= document.getElementById('txtEmail').value;
-//	var inscrMunicipal = document.getElementById('txtInscrMunicipal').value;
-//	var inscrEstadual =document.getElementById('txtInscrEstadual').value;
-//	var cep = document.getElementById('txtTomadorCEP').value;
-//
-//	var dados="numeroNota=@numeroNota&razaoSocial=@razaoSocial&uf=@uf&cidade=@cidade&endereco=@endereco&";
-//	dados=dados+"email=@email&inscrMunicipal=@inscrMunicipal&inscrEstadual=@inscrEstadual&cep=@cep&insert=true";
-//	dados = dados.replace('@numeroNota',numeroNota).replace('@razaoSocial',razaoSocial).replace('@uf',uf);
-//	dados = dados.replace('@cidade',cidade).replace('@endereco',endereco).replace('@email',email);
-//	dados = dados.replace('@inscrMunicipal',inscrMunicipal).replace('@inscrEstadual',inscrEstadual).replace('@cep',cep);
-//
-//	var result = document.getElementById('resultado');
-//	result.innerHTML = '<h1>Emitindo Corre&ccedil;&atilde;o</h1>';
-//
-//	var xmlreq =  criaRequest();
-//	xmlreq.open("GET","inc/cartacorretiva_inserir.php?"+dados,true);
-//	xmlreq.send(dados);
-//
-//	xmlreq.onreadystatechange= function(){
-//		if (xmlreq.readyState == 4){
-//			result.innerHTML = xmlreq.responseText;		
-//		}
-//	}
-//
-//		
-//}
