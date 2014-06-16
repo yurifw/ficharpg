@@ -14,6 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import org.hibernate.exception.ConstraintViolationException;
 
 /**
  *
@@ -37,6 +38,12 @@ public class AdicionaJogadorServlet extends HttpServlet {
             out.println("Usuario cadastrado com sucesso");
         } catch(IllegalArgumentException iae) {
             out.println(iae.getMessage());
+        } catch (ConstraintViolationException cve){
+            //apenas 2 campos unicos, entao se n for login repetido, é email repetido
+            String msg = cve.getConstraintName().equals("login")?
+                    "Este Login já é utilizado =/" : 
+                    "Este email já está cadastrado, você pode tentar recuperar a senha através dele.";
+            out.println(msg);
         }
         
     }

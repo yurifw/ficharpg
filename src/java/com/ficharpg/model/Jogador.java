@@ -6,6 +6,9 @@
 
 package com.ficharpg.model;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -18,8 +21,10 @@ import javax.persistence.Id;
 public class Jogador {
     @Id @GeneratedValue
     private int id;
+    @Column(unique = true)
     private String login;
     private String nome;
+    @Column(unique = true)
     private String email;
     private String senha;
 
@@ -74,14 +79,39 @@ public class Jogador {
     public void setSenha(String senha) {
         if (senha.isEmpty()) throw new IllegalArgumentException("A Senha é obrigatória");
         if (senha.length()<6) throw new IllegalArgumentException("A Senha deve conter pelo menos 6 caracteres");
-        this.senha = senha;
+        
+        if (senha.length()==64){
+            this.senha = senha;
+        } else {
+            this.senha = toSHA256(senha);
+        }
+        
     }
 
+    private String toSHA256(String passwordToHash) {
+        String generatedPassword = null;
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] bytes = md.digest(passwordToHash.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i< bytes.length ;i++){
+                sb.append(Integer.toString((bytes[i] & 0xff) + 0x100, 16).substring(1));
+            }
+            generatedPassword = sb.toString();
+        } 
+        catch (NoSuchAlgorithmException e){
+            e.printStackTrace();
+        }
+        return generatedPassword;
+    }
+
+    
+    
     @Override
     public String toString() {
         return  "Nome: "+getNome()+" Email: "+getEmail()+" login: "+getLogin();
     }
     
     
-    
+        
 }
