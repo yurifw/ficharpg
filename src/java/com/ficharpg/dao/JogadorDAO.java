@@ -27,5 +27,11 @@ public class JogadorDAO {
         tx.commit();
     }
     
+    public Jogador buscaPorLogin(String login){
+        
+        Transaction tx = session.beginTransaction();
+        Jogador j = (Jogador)session.createQuery("from Jogador as jogador where jogador.login = :login").setParameter("login", login).uniqueResult();
+        return j;
+    }
     
 }

@@ -28,7 +28,12 @@ public class Jogador {
     private String email;
     private String senha;
 
+    public Jogador(){
+        
+    }
+    
     public Jogador(String login, String nome, String email, String senha) {
+        this();
         setLogin(login);
         setNome(nome);
         setEmail(email);
@@ -111,7 +116,12 @@ public class Jogador {
     public String toString() {
         return  "Nome: "+getNome()+" Email: "+getEmail()+" login: "+getLogin();
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        Jogador j = (Jogador) obj;
+        return this.login.equals(j.getLogin()) && this.senha.equals(j.getSenha());
+    }
     
-    
-        
+           
 }
