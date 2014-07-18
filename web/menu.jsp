@@ -3,9 +3,9 @@
 <link rel="stylesheet" type="text/css" href="res/css/purecss.css">
 
 
-    <div>
-        <ul style="list-style-type: none">
-            <li class=" "><a class="botao" href="<%= request.getContextPath()%>/index.jsp">home</a></li>
+<div>
+    <ul style="list-style-type: none">
+        <li class=" "><a class="botao" href="<%= request.getContextPath()%>/index.jsp">home</a></li>
         <li class=" "><a class="botao" href="<%= request.getContextPath()%>/vampiro.jsp">monte a ficha</a></li>
 
         <c:if test='${sessionScope.jogador != null  }'>
