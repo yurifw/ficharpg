@@ -127,13 +127,42 @@
         <fieldset class="pure-group">
             <input type="text" name="login" id="login" class="pure-input-1" placeholder="Login">
             <input type="password" name="senha" id="senha" class="pure-input-1" placeholder="Senha">
-            <a class="botao pure-button pure-input-1" onclick="sendForm('loginForm','<%= request.getContextPath()%>/login','loginResult')">Login</a>
+            <a class="botao pure-button pure-input-1" onclick="login()">Login</a>
         </fieldset>        
         <div id="loginResult"></div>
         <a class="forgot" href="#">Esqueceu a senha?</a>
     </form>
 </div>
+<script type="text/javascript">
+    function login() {
+        var elem = document.getElementById('loginForm').elements;
+        var link = "?";
+        for (var i = 0; i < elem.length; i++) {
+            if (elem[i].tagName === "INPUT") {
+                link += elem[i].name + "=" + elem[i].value + "&";
+            }
+        }
+        link = link.substr(0, link.length - 1);
 
+        var result = document.getElementById('loginResult');
+        var requisicao = getRequest();
+
+        result.innerHTML = "Carregando...";
+
+        requisicao.open("POST", '<%= request.getContextPath()%>/login' + link);
+        requisicao.send();
+        requisicao.onreadystatechange = function() {
+            result.innerHTML = requisicao.responseText;
+            if (requisicao.responseText=='1'){
+                $('#mask').remove();
+                $('.login-popup').remove();
+                location.reload(true);
+            }
+        };
+        
+
+    }
+</script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.6.4.min.js"></script>
 <script>
     $(document).ready(function() {

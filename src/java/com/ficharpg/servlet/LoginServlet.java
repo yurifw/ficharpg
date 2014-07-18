@@ -26,17 +26,26 @@ public class LoginServlet extends HttpServlet {
         String login = request.getParameter("login");
         String senha = request.getParameter("senha");
 
-        Jogador j = new Jogador();
-        j.setLogin(login);
-        j.setSenha(senha);
-        JogadorDAO dao = new JogadorDAO();
-        Jogador j2 = dao.buscaPorLogin(login);
-        
-        if (j.equals(j2)) {
-            HttpSession session = request.getSession();
-            session.setAttribute("jogador", j2);
-        } else {
+        try {
+            Jogador j = new Jogador();
+            j.setLogin(login);
+            j.setSenha(senha);
+            JogadorDAO dao = new JogadorDAO();
+            Jogador j2 = new Jogador();
+            j2 = dao.buscaPorLogin(login);
+
+            if (j.equals(j2)) {
+                HttpSession session = request.getSession();
+                session.setAttribute("jogador", j2);
+                response.getWriter().print(1);
+            } else {
+                response.getWriter().print("Senha não confere");
+            }
+
+        } catch (NullPointerException npe) {
             response.getWriter().print("Não foi possível autenticar");
+        } catch (Exception e) {
+            response.getWriter().print(e.getMessage());
         }
     }
 }
